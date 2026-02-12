@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+
+        <h1>Maths Challenge</h1>
+
+        <!-- Mód választó -->
+        <div class="mode-select">
+            <button class="mode-btn" data-mode="normal">Normál mód</button>
+            <button class="mode-btn" data-mode="timed">Időzítős mód</button>
+        </div>
+
+        <!-- Nehézségi szint -->
+        <div class="difficulty-select">
+            <label>Nehézség:</label>
+            <select id="difficulty">
+                <option value="easy">Könnyű</option>
+                <option value="medium">Közepes</option>
+                <option value="hard">Nehéz</option>
+            </select>
+        </div>
+
+        <!-- Időzítő -->
+        <p id="timer" class="hidden">Idő: <span id="time-left">10</span> mp</p>
+
+        <!-- Kérdés -->
+        <p id="question">Kérdés itt jelenik meg</p>
+
+        <!-- Válasz -->
+        <input type="number" id="answer" placeholder="Írd be a választ">
+
+        <br><br>
+
+        <!-- Gomb -->
+        <button id="submit-btn">OK</button>
+
+        <!-- Eredmény -->
+        <p id="result"></p>
+
+        <!-- Hangok -->
+        <audio id="correct-sound" src="correct.mp3"></audio>
+        <audio id="wrong-sound" src="wrong.mp3"></audio>
+        <audio id="timer-sound" src="timer.mp3"></audio>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

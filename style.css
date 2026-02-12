@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: url("pophunters.png") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.game-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 320px;
+    max-width: 90vw;
+    backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 0 30px rgba(255, 0, 150, 0.6);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.mode-select {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.mode-btn {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(90deg, #ff00cc, #6a00ff);
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff00cc;
+    transition: 0.2s;
+}
+
+.mode-btn.active {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff00cc, 0 0 30px #6a00ff;
+}
+
+.difficulty-select {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.difficulty-select select {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid #ff00cc;
+    background: black;
+    color: white;
+    font-size: 14px;
+}
+
+#timer {
+    margin: 5px 0 10px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    padding: 12px;
+    width: 85%;
+    border-radius: 10px;
+    border: 2px solid #ff00cc;
+    background: black;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 0 0 15px #ff00cc;
+}
+
+button#submit-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #ff00cc, #6a00ff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px #ff00cc;
+}
+
+button#submit-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #ff00cc, 0 0 50px #6a00ff;
+}
+
+#result {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff00cc;
+}
+
+/* Animációk jó / rossz válaszra */
+
+.correct-flash {
+    animation: correctFlash 0.4s;
+}
+
+.wrong-flash {
+    animation: wrongFlash 0.4s;
+}
+
+@keyframes correctFlash {
+    0% { color: #ffffff; }
+    50% { color: #00ff7f; }
+    100% { color: #ffffff; }
+}
+
+@keyframes wrongFlash {
+    0% { color: #ffffff; }
+    50% { color: #ff4444; }
+    100% { color: #ffffff; }
+}
+
+/* Mobilbarát */
+
+@media (max-width: 480px) {
+    .game-container {
+        padding: 20px;
+        width: 90vw;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button#submit-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
